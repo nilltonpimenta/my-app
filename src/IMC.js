@@ -1,10 +1,11 @@
 import * as React from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
+import styles from "./styles/styles";
 
 function IMC({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Calculando IMC</Text>
+      <Text style={styles.text}>Calculadora de IMC</Text>
       <TextInput style={styles.textinput} placeholder="Altura (m)" />
       <TextInput style={styles.textinput} placeholder="Peso (Kg)" />
 
@@ -21,26 +22,5 @@ function IMC({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "black",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "white",
-  },
-  textinput: {
-    height: 40,
-    width: 250,
-    margin: 12,
-    borderWidth: 1,
-    padding: 5,
-    backgroundColor: "white",
-    textAlign: "center",
-  },
-});
 
 export default IMC;
