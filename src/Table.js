@@ -1,26 +1,38 @@
 import * as React from "react";
-import { View, Text, Button, Image } from "react-native";
+import { SafeAreaView, View, Text, Button, Image } from "react-native";
 import styles from "./styles/styles";
+import Separator from "./components/Separator";
 
 function Tableview({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Classificação</Text>
-      <Image
-        style={styles.table}
-        source={require("../assets/table.png")}
-        resizeMode="contain"
-      />
-      <Button
-        title="Calcular IMC"
-        onPress={() => navigation.navigate("IMC")}
-      />
-      <Button
-        title="Tela Inicial"
-        onPress={() => navigation.navigate("Home")}
-      />
-      <Button title="Voltar" onPress={() => navigation.goBack()} />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.view}>
+        <Text style={styles.text}>Classificação</Text>
+        <Image
+          style={styles.table}
+          source={require("../assets/table.png")}
+          resizeMode="contain"
+        />
+        <Separator />
+        <Button
+          style={styles.button}
+          title="Calcular IMC"
+          onPress={() => navigation.navigate("IMC")}
+        />
+        <Separator />
+        <Button
+          style={styles.button}
+          title="Tela Inicial"
+          onPress={() => navigation.navigate("Home")}
+        />
+        <Separator />
+        <Button
+          style={styles.button}
+          title="Voltar"
+          onPress={() => navigation.goBack()}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 
